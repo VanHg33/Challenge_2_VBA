@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module1"
+
 Sub multiple_year_stock()
 
 'Declare worksheets
