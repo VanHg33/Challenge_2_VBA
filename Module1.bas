@@ -19,7 +19,7 @@ ws.Range("O2") = "Greatest % Increase"
 ws.Range("O3") = "Greatest % Decrease"
 ws.Range("O4") = "Greatest Total Volume"
 
-
+Dim Lastrow As Long
 'Define last row
 Lastrow = ws.Cells(Rows.Count, 1).End(xlUp).Row
 
@@ -33,7 +33,8 @@ Lastrow = ws.Cells(Rows.Count, 1).End(xlUp).Row
     'Yearly change from the opening price at the beginning of a given year to the closing price at the end of that year
     '.........................................................
     Dim yearlychange As Double
-    Dim openyear, closeyear As Double
+    Dim openyear As Double
+    Dim closeyear As Double
     'Define the opening price at the beginning of a year of each worksheet, before looping
     openyear = ws.Range("C2").Value
 
@@ -48,8 +49,12 @@ Lastrow = ws.Cells(Rows.Count, 1).End(xlUp).Row
 
     'BONUS:Find tickers that have greatest increase, greatest decrease,and greatest total volumn
     '.................................................................
-    Dim greatestincrease, greatestdecrease, greatestvolumn As Double
-    Dim greatest_increase_ticker, greatest_decrease_ticker, greatest_volumn_ticker As String
+    Dim greatestincrease As Double
+    Dim greatestdecrease As Double
+    Dim greatestvolumn As Double
+    Dim greatest_increase_ticker As String
+    Dim greatest_decrease_ticker As String
+    Dim greatest_volumn_ticker As String
     greatestincrease = 0
     greatestdecrease = 0
     greatestvolumn = 0
@@ -107,7 +112,8 @@ Lastrow = ws.Cells(Rows.Count, 1).End(xlUp).Row
     '............................................................
     'Formatting for Yearly Change
     Dim rg As Range
-    Dim condition1, condition2 As FormatCondition
+    Dim condition1 As FormatCondition
+    Dim condition2 As FormatCondition
     
         'specify range to apply
         Set rg = ws.Range("J2", ws.Range("J2").End(xlDown))
@@ -131,7 +137,8 @@ Lastrow = ws.Cells(Rows.Count, 1).End(xlUp).Row
         
     'Formatting for Percent Change
     Dim rg1 As Range
-    Dim condition3, condition4 As FormatCondition
+    Dim condition3 As FormatCondition
+    Dim condition4 As FormatCondition
     
         'specify range to apply
         Set rg1 = ws.Range("K2", ws.Range("K2").End(xlDown))
